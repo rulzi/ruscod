@@ -47,11 +47,10 @@ class UserController implements ControllerProviderInterface
             $login = $user->login($request->request->all());
 
             $app['session']->set('user', array('id' => $login['id']));
-            // var_dump(expression);exit();
             return $app->redirect($app['url_generator']->generate('account'));
         } else {
             $errors = $v->errors();
-            return $app['plates']->render('dologin', ['errors' => $errors]);
+            return $app['plates']->render('login', ['errors' => $errors]);
         }
     }
 

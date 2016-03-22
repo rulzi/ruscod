@@ -1,3 +1,4 @@
 vendor/
 phinx.yml
 .env
+app/development.log
